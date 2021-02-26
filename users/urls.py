@@ -11,6 +11,8 @@ app_name = "users"
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('groups/<int:group_id>/add-user/', AddUserToGroup.as_view(), name="add-user"),
-    path('groups/<int:group_id>/remove-user/', RemoveUserFromGroup.as_view(), name="remove-user"),
+    path('groups/<int:group_id>/add-user/', 
+         AddUserToGroup.as_view(), name="add-user"),
+    path('groups/<int:group_id>/remove-user/', 
+         RemoveUserFromGroup.as_view(), name="remove-user"),
 ]

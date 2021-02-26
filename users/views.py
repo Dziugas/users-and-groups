@@ -58,9 +58,11 @@ class AddUserToGroup(APIView):
                 status=status.HTTP_200_OK
             )
         return Response(
-            serializer.errors, status=400
+            serializer.errors, 
+            status=status.HTTP_400_BAD_REQUEST
         )
-        
+
+
 class RemoveUserFromGroup(APIView):
     def delete(self, request, group_id):
         serializer = ManagementSerializer(data=request.data)        
