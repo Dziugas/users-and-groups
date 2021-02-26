@@ -15,4 +15,5 @@ jobs:
           name: Create and run tests
           command: |
             sudo chmod +x manage.py
+            sudo docker exec -it management flake8 --exclude ./users/migrations
             sudo docker exec -it management python manage.py test
